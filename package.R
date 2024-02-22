@@ -1,0 +1,32 @@
+## 在centos环境上安装不要让path中包含anaconda（否则依赖包xml2的安装会出问题）
+## 预先本地安装stringi，网络安装包连不上网
+
+install.packages("devtools",repos ="https://mirrors.tuna.tsinghua.edu.cn/CRAN/",quietly=TRUE)
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager",repos ="https://mirrors.tuna.tsinghua.edu.cn/CRAN/",quietly=TRUE)
+BiocManager::install("S4Vectors")
+BiocManager::install("SingleCellExperiment")
+BiocManager::install("Seurat")
+BiocManager::install("SeuratDisk")
+BiocManager::install("scater")
+BiocManager::install("Signac")
+BiocManager::install("scry")
+BiocManager::install("dplyr")
+BiocManager::install("patchwork")
+BiocManager::install("reticulate")
+BiocManager::install("glmGamPoi")
+BiocManager::install("kstreet13/slingshot")
+BiocManager::install("BiocNeighbors")
+BiocManager::install("ComplexHeatmap")
+BiocManager::install("limma")
+devtools::install_github('satijalab/seurat-data')
+devtools::install_github("sqjin/CellChat")
+devtools::install_github("saeyslab/nichenetr")
+install.packages('Matrix',repos ="https://mirrors.tuna.tsinghua.edu.cn/CRAN/",quietly=TRUE)
+install.packages("uwot",repos ="https://mirrors.tuna.tsinghua.edu.cn/CRAN/",quietly=TRUE)
+install.packages("mclust",repos ="https://mirrors.tuna.tsinghua.edu.cn/CRAN/",quietly=TRUE)
+install.packages("CellChat",repos ="https://mirrors.tuna.tsinghua.edu.cn/CRAN/",quietly=TRUE)
+install.packages("tidyverse",repos ="https://mirrors.tuna.tsinghua.edu.cn/CRAN/",quietly=TRUE)
+remotes::install_github("mojaveazure/seurat-disk")
+
+# export LD_LIBRARY_PATH="/opt/R/4.2.2/lib/R/lib:$LD_LIBRARY_PATH"

@@ -500,7 +500,7 @@ def getResponseFromAdata(adata):
             TI['connectivities'] = adata.uns['paga']['connectivities'].A.tolist() ##注意，这里的index与groups的顺序对应，而不是与索引绑定
             ### 散点数据
             TI['scatter'] = []
-            for scatter_pos,scatter_group in zip(adata.obsm['X_draw_graph_fa'].tolist(),groupArr.tolist()):  ##注意，这里与groupArr的绑定主要通过obs中index的顺序，而不是与索引绑定
+            for scatter_pos,scatter_group in zip(adata.obsm['X_draw_graph_fa'].tolist(),adata.obs.label.tolist()):  ##注意，这里与groupArr的绑定主要通过obs中index的顺序，而不是与索引绑定
                 TI['scatter'].append({'pos':scatter_pos,'group':scatter_group})
             ### 散点平均数据
             TI['mean'] = []
